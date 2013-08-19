@@ -1,0 +1,18 @@
+#!/bin/sh
+
+function take_and_upload_photo {
+  PHOTODIR=~/.git-photos
+  FILENAME=$PHOTODIR/$(date +%s).jpg
+  mkdir -p $PHOTODIR
+  imagesnap -q $FILENAME
+
+  SHA=$(git log -1 --format=format:%h)
+  ORIGIN_URL=$(git config --get remote.origin.url)
+  APIKEY=$(cat ~/.gitpic-api-key)
+  curl -L -i -F access_token=$APIKEY -F sha=$SHA -F origin=$ORIGIN_URL -F photo=@$FILENAME http://www.gitpic.io/api/uploads
+}
+
+GITDIR=$(git rev-parse --show-toplevel)
+if [[ ! -d "$GITDIR/.git/rebase-merge" && ! -d "$GITDIR/.git/rebase-apply" ]]; then
+  take_and_upload_photo >& /dev/null &
+fi
