@@ -6,8 +6,8 @@ A git post-commit hook for uploading photos to [gitpic](http://www.gipic.io)
 What is gitpic.io?
 ==================
 
-gitpic.io is a fun, free website where you can watch code happen.  Every developer who
-installs this post-commit hook will upload photos directly to gipic.io after every commit.
+[gitpic.io](http://www.gitpic.io) is a fun, free website where you can watch code happen.
+Every developer who installs this post-commit hook will upload photos directly to [gitpic.io](http://www.gitpic.io) after every commit.
 
 How to install:
 ===============
@@ -16,7 +16,7 @@ How to install:
 
         git clone https://github.com/venables/gitpic-hook.git
 
-2. Copy your gitpic API key to your local machine.  You can get your API key by signgin in to http://www.gitpic.io and clicking your username in the top right.
+2. Copy your gitpic API key to your local machine.  You can get your API key by signing in to http://www.gitpic.io.
 
         touch ~/.gitpic-api-key
         echo "API_KEY_FROM_GITPIC" > ~/.gitpic-api-key
