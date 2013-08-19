@@ -6,7 +6,7 @@ function take_and_upload_photo {
   mkdir -p $PHOTODIR
   imagesnap -q $FILENAME
 
-  SHA=$(git log -1 --format=format:%h)
+  SHA=$(git log -1 --format=format:%H)
   ORIGIN_URL=$(git config --get remote.origin.url)
   APIKEY=$(cat ~/.gitpic-api-key)
   curl -L -i -F access_token=$APIKEY -F sha=$SHA -F origin=$ORIGIN_URL -F photo=@$FILENAME http://www.gitpic.io/api/uploads
