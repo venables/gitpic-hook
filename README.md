@@ -21,8 +21,11 @@ How to install:
         touch ~/.gitpic-api-key
         echo "API_KEY_FROM_GITPIC" > ~/.gitpic-api-key
 
+3. Install imagesnap
 
-3. Follow [these instructions](https://coderwall.com/p/jp7d5q) on how to make a global git post-commit hook:
+        brew install imagesnap
+
+4. Follow [these instructions](https://coderwall.com/p/jp7d5q) on how to make a global git post-commit hook:
 
     > 1. Enable git templates:
 
