@@ -9,6 +9,7 @@ function take_and_upload_photo {
   SHA=$(git log -1 --format=format:%H)
   APIKEY=$(cat ~/.gitpic-api-key)
   curl -L -i -F access_token=$APIKEY -F sha=$SHA -F photo=@$FILENAME http://www.gitpic.io/api/uploads
+  rm $FILENAME;
 }
 
 GITDIR=$(git rev-parse --show-toplevel)
