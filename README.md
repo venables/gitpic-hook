@@ -1,7 +1,7 @@
 gitpic-hook
 ===========
 
-A git post-commit hook for uploading photos to [gitpic](http://www.gipic.io)
+A git post-commit hook for uploading photos to [gitpic](http://www.gitpic.io)
 
 What is gitpic.io?
 ==================
