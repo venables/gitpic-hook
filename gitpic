@@ -3,8 +3,9 @@
 function take_and_upload_photo {
   PHOTODIR=~/.git-photos
   FILENAME=$PHOTODIR/$(date +%s).jpg
+  WARMUP=1.00
   mkdir -p $PHOTODIR
-  imagesnap -q $FILENAME
+  imagesnap -q $FILENAME -w $WARMUP
 
   SHA=$(git log -1 --format=format:%H)
   APIKEY=$(cat ~/.gitpic-api-key)
